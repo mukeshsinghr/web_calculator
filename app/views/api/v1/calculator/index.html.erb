@@ -1,0 +1,22 @@
+<script type="text/javascript">
+	document.body.addEventListener('ajax:success', function(event) {
+  console.log("cehck"+event.detail);
+  var detail = event;
+  var data = detail[0], status = detail[1], xhr = detail[2];
+  console.log(data);
+  console.log("result = "+detail.detail[0].result);
+
+  document.getElementById('result').innerHTML = detail.detail[0].result;
+
+})
+  
+</script>
+
+<form action="api/v1/calculator/perform_calculation" method="post" data-remote="true">
+<h2> Web Calculator </h2>
+  Enter Expresson 
+  <input type='text' id='expression' name='expression' value="" />
+</br>
+  Result =  <span id="result"></span> </br></br></br>
+  <input type='submit' value='Calculate'/>
+</form>
