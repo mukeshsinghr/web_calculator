@@ -10,7 +10,7 @@ RSpec.describe Api::V1::CalculatorController, :type => :controller do
   end
 
   describe "Post perform_calculation#perform_calculation" do
-  	
+    
     it "has a 200 status code" do
       post :perform_calculation, params: { :expression => '1+2' }
       expect(response.status).to eq(200)
